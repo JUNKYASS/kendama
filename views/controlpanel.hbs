@@ -1,0 +1,403 @@
+<section class="controlpanel content-middle">
+  <h1>Панель управления {{envVar}}</h1>
+  <div class="holder-panel js-holder-panel js-panel" data-module-selector=".js-holder-panel" data-module-table="system_holder">
+    <h2>Управление холдерами</h2>
+
+    <section class="all-items js-all-items">
+      <!-- <h3>Весь список</h3> -->
+      <div class="items">
+        <div class="item header">
+          <div class="param id">ID</div>
+          <div class="param name">Наименование</div>
+          <div class="param edit"></div>
+          <div class="param delete"></div>
+        </div>
+        {{#each holderRows}}
+          <div class="item js-item" data-id="{{this.holder_uid_id}}" data-json="{{this.jsonData}}">
+            <div class="param id">{{this.holder_uid_id}}</div>
+            <div class="param name">{{this.holder_chr_name}}</div>
+            <div class="param edit js-edit">edit</div>
+            <div class="param delete js-delete">delete</div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <form enctype="multipart/form-data" method="post" data-form-fetch="refreshHtmlContent('/controlpanel', '.js-holder-panel .js-all-items');">
+      <h3>Создание новой записи</h3>
+
+      <input type="hidden" name="moduleTable" value="system_holder">
+      <input type="hidden" name="holder_uid_id" value="" disabled>
+
+      <!-- <input type="file" name="image"> -->
+      <label class="primary type2 name">
+        <div class="placeholder active">Наименование</div>
+        <input type="text" name="holder_chr_name" value=""  required>
+      </label>
+
+      <div class="control-group">
+        <button class="btn-secondary" type="submit"></button>
+        <div class="edit-mode-close js-edit-mode-close"><i class="icon-arrow-left-circle"></i><span>Выйти из режима редактирования</span></div>
+        <p data-form-response></p>
+      </div>
+    </form>
+  </div>
+
+  <div class="folder-panel js-folder-panel js-panel" data-module-selector=".js-folder-panel" data-module-table="folder">
+    <h2>Управление категориями</h2>
+
+    <section class="all-items js-all-items">
+      <!-- <h3>Весь список</h3> -->
+      <div class="items">
+        <div class="item header">
+          <div class="param id">ID</div>
+          <div class="param url">URL</div>
+          <div class="param name">Наименование</div>
+          <div class="param image">Image</div>
+          <div class="param active">Активно?</div>
+          <div class="param edit"></div>
+          <div class="param delete"></div>
+        </div>
+        {{#each folderRows}}
+          <div class="item js-item" data-id="{{this.folder_uid_id}}" data-json="{{this.jsonData}}">
+            <div class="param id">{{this.folder_uid_id}}</div>
+            <div class="param url">{{this.folder_chr_url}}</div>
+            <div class="param name">{{this.folder_chr_name}}</div>
+            <div class="param image"><img src="{{this.folder_img_image}}" data-faze="zoombox" data-faze-zoombox-image="{{this.folder_img_image}}" data-faze-zoombox-height="400"  data-faze-zoombox-group="1" alt="{{this.folder_chr_name}}"></div>
+            <div class="param active">{{this.folder_enm_active}}</div>
+            <div class="param edit js-edit">edit</div>
+            <div class="param delete js-delete">delete</div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <form enctype="multipart/form-data" method="post" class="js-transliterate-scope" data-form-fetch="refreshHtmlContent('/controlpanel', '.js-folder-panel .js-all-items');">
+      <h3>Создание новой записи</h3>
+
+      <input type="hidden" name="moduleTable" value="folder">
+      <input type="hidden" name="folder_uid_id" value="" disabled>
+
+      <label class="primary type2 member">
+        <div class="placeholder active optional">Member</div>
+        <input type="text" name="folder_mbr_member" value="" required>
+      </label>
+
+      <label class="primary type2 holder">
+        <div class="placeholder active optional">Holder</div>
+        <input type="text" name="folder_hld_holder" value="" required>
+      </label>
+
+      <label class="primary type2 url">
+        <div class="placeholder active">URL</div>
+        <input type="text" name="folder_chr_url" class="js-transliterate-to" value="" required>
+      </label>
+
+      <label class="primary type2 name">
+        <div class="placeholder active">Наименование</div>
+        <input type="text" name="folder_chr_name" class="js-transliterate-from" value=""  required>
+      </label>
+
+      <label class="primary type2 value1">
+        <div class="placeholder active optional">Value1</div>
+        <input type="text" name="folder_int_value1" value="" >
+      </label>
+
+      <label class="primary type2 value2">
+        <div class="placeholder active optional">Value2</div>
+        <input type="text" name="folder_int_value2" value="" >
+      </label>
+
+      <label class="primary type2 text1">
+        <div class="placeholder active optional">Text1</div>
+        <input type="text" name="folder_txt_text1" value="" >
+      </label>
+
+      <label class="primary type2 text2">
+        <div class="placeholder active optional">Text2</div>
+        <input type="text" name="folder_txt_text2" value="">
+      </label>
+
+      <label class="primary type4 image js-file-upload">
+        <i class="icon-picture"></i>
+        <div class="placeholder optional" data-default-text="Выберите изображение">Выберите изображение</div>
+        <input type="file" name="image" value="">
+      </label>
+
+      <label class="primary type3 active">
+        <div class="placeholder">Активно?</div>
+        <label><input type="radio" name="folder_enm_active" value="YES" checked required><span>YES</span></label>
+        <label><input type="radio" name="folder_enm_active" value="NO" required><span>NO</span></label>
+      </label>
+
+      <div class="control-group">
+        <button class="btn-secondary" type="submit"></button>
+        <div class="edit-mode-close js-edit-mode-close"><i class="icon-arrow-left-circle"></i><span>Выйти из режима редактирования</span></div>
+        <p data-form-response></p>
+      </div>
+    </form>
+  </div>
+
+  <div class="product-panel js-product-panel js-panel" data-module-selector=".js-product-panel" data-module-table="product">
+    <h2>Управление товарами</h2>
+
+    <section class="all-items js-all-items">
+      <!-- <h3>Весь список</h3> -->
+      <div class="items">
+        <div class="item header">
+          <div class="param id">ID</div>
+          <div class="param category">Категория</div>
+          <div class="param url">URL</div>
+          <div class="param article">Артикул</div>
+          <div class="param name">Наименование</div>
+          <div class="param price1">Цена1</div>
+          <div class="param image">Image</div>
+          <div class="param active">Активно?</div>
+          <div class="param active">Наличие?</div>
+          <div class="param edit"></div>
+          <div class="param delete"></div>
+        </div>
+        {{#each productRows}}
+          <div class="item js-item" data-id="{{this.product_uid_id}}" data-json="{{this.jsonData}}">
+            <div class="param id">{{this.product_uid_id}}</div>
+
+            {{#if this.folder_chr_name}}
+              <div class="param category">{{this.product_mbr_member}}: {{this.folder_chr_name}}</div>
+            {{else}}
+              <div class="param member">{{this.product_mbr_member}}</div>
+            {{/if}}
+
+            <div class="param url">{{this.product_chr_url}}</div>
+            <div class="param article">{{this.product_chr_article}}</div>
+            <div class="param name">{{this.product_chr_name}}</div>
+            <div class="param price1">{{this.product_dec_price1}} руб.</div>
+            <div class="param image"><img src="{{this.product_img_image}}" data-faze="zoombox" data-faze-zoombox-image="{{this.product_img_image}}" data-faze-zoombox-height="400"  data-faze-zoombox-group="1" alt="{{this.product_chr_name}}"></div>
+            <div class="param active">{{this.product_enm_active}}</div>
+            <div class="param available">{{this.product_enm_available}}</div>
+            <div class="param edit js-edit">edit</div>
+            <div class="param delete js-delete">delete</div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <form enctype="multipart/form-data" method="post" class="js-transliterate-scope" data-form-fetch="refreshHtmlContent('/controlpanel', '.js-product-panel .js-all-items');">
+      <h3>Создание новой записи</h3>
+
+      <input type="hidden" name="moduleTable" value="product">
+      <input type="hidden" name="product_uid_id" value="" disabled>
+
+      <label class="primary type2 member">
+        <div class="placeholder active optional">Member</div>
+        <input type="text" name="product_mbr_member" value="" required>
+      </label>
+
+      <label class="primary type2 holder">
+        <div class="placeholder active optional">Holder</div>
+        <input type="text" name="product_hld_holder" value="" required>
+      </label>
+
+      <label class="primary type2 url">
+        <div class="placeholder active">URL</div>
+        <input type="text" name="product_chr_url" class="js-transliterate-to" value="" required>
+      </label>
+
+      <label class="primary type2 name">
+        <div class="placeholder active">Наименование</div>
+        <input type="text" name="product_chr_name" class="js-transliterate-from" value=""  required>
+      </label>
+
+      <label class="primary type2 article">
+        <div class="placeholder active">Артикул</div>
+        <input type="text" name="product_chr_article" class="js-transliterate-from" value=""  required>
+      </label>
+
+      <label class="primary type2 text">
+        <div class="placeholder active optional">Текст</div>
+        <input type="text" name="product_txt_text" value="" >
+      </label>
+
+      <label class="primary type2 price1">
+        <div class="placeholder active">Price1</div>
+        <input type="text" name="product_dec_price1" value="" required>
+      </label>
+
+      <label class="primary type2 price2">
+        <div class="placeholder active optional">Price2</div>
+        <input type="text" name="product_dec_price2" value="" >
+      </label>
+
+      <label class="primary type3 active">
+        <div class="placeholder">Активно?</div>
+        <label><input type="radio" name="product_enm_active" value="YES" checked required><span>YES</span></label>
+        <label><input type="radio" name="product_enm_active" value="NO" required><span>NO</span></label>
+      </label>
+
+      <label class="primary type3 exist">
+        <div class="placeholder">В наличии?</div>
+        <label><input type="radio" name="product_enm_available" value="YES" checked required><span>YES</span></label>
+        <label><input type="radio" name="product_enm_available" value="NO" required><span>NO</span></label>
+      </label>
+
+      <label class="primary type4 image js-file-upload">
+        <i class="icon-picture"></i>
+        <div class="placeholder optional" data-default-text="Выберите изображение">Выберите изображение</div>
+        <input type="file" name="image" value="">
+      </label>
+
+      <div class="control-group">
+        <button class="btn-secondary" type="submit"></button>
+        <div class="edit-mode-close js-edit-mode-close"><i class="icon-arrow-left-circle"></i><span>Выйти из режима редактирования</span></div>
+        <p data-form-response></p>
+      </div>
+    </form>
+  </div>
+
+  <div class="image-panel js-image-panel js-panel" data-module-selector=".js-image-panel" data-module-table="image">
+    <h2>Управление изображениями</h2>
+
+    <section class="all-items js-all-items">
+      <!-- <h3>Весь список</h3> -->
+      <div class="items">
+        <div class="item header">
+          <div class="param id">ID</div>
+          <div class="param member">Member</div>
+          <div class="param holder">Holder</div>
+          <div class="param name">Наименование</div>
+          <div class="param image">Image</div>
+          <div class="param active">Активно?</div>
+          <div class="param edit"></div>
+          <div class="param delete"></div>
+        </div>
+        {{#each imageRows}}
+          <div class="item js-item" data-id="{{this.image_uid_id}}" data-json="{{this.jsonData}}">
+            <div class="param id">{{this.image_uid_id}}</div>
+            <div class="param member">{{this.image_mbr_member}}</div>
+
+            {{#if this.holder_chr_name}}
+              <div class="param category">{{this.image_hld_holder}}: {{this.holder_chr_name}}</div>
+            {{else}}
+              <div class="param holder">{{this.image_hld_holder}}</div>
+            {{/if}}
+
+            <div class="param name">{{this.image_chr_name}}</div>
+            <div class="param image"><img src="{{this.image_img_image}}" data-faze="zoombox" data-faze-zoombox-image="{{this.image_img_image}}" data-faze-zoombox-height="400"  data-faze-zoombox-group="1" alt="{{this.image_chr_name}}"></div>
+            <div class="param active">{{this.image_enm_active}}</div>
+            <div class="param edit js-edit">edit</div>
+            <div class="param delete js-delete">delete</div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <form enctype="multipart/form-data" method="post" class="js-transliterate-scope" data-form-fetch="refreshHtmlContent('/controlpanel', '.js-image-panel .js-all-items');">
+      <h3>Создание новой записи</h3>
+
+      <input type="hidden" name="moduleTable" value="image">
+      <input type="hidden" name="image_uid_id" value="" disabled>
+
+      <label class="primary type2 member">
+        <div class="placeholder active optional">Member</div>
+        <input type="text" name="image_mbr_member" value="" required>
+      </label>
+
+      <label class="primary type2 holder">
+        <div class="placeholder active optional">Holder</div>
+        <input type="text" name="image_hld_holder" value="" required>
+      </label>
+
+      <label class="primary type2 name">
+        <div class="placeholder active optional">Наименование</div>
+        <input type="text" name="image_chr_name" class="js-transliterate-from" value="">
+      </label>
+
+      <label class="primary type3 active">
+        <div class="placeholder">Активно?</div>
+        <label><input type="radio" name="image_enm_active" value="YES" checked required><span>YES</span></label>
+        <label><input type="radio" name="image_enm_active" value="NO" required><span>NO</span></label>
+      </label>
+
+      <label class="primary type4 image js-file-upload">
+        <i class="icon-picture"></i>
+        <div class="placeholder optional" data-default-text="Выберите изображение">Выберите изображение</div>
+        <input type="file" name="image" value="">
+      </label>
+
+      <div class="control-group">
+        <button class="btn-secondary" type="submit"></button>
+        <div class="edit-mode-close js-edit-mode-close"><i class="icon-arrow-left-circle"></i><span>Выйти из режима редактирования</span></div>
+        <p data-form-response></p>
+      </div>
+    </form>
+  </div>
+
+  <div class="user-panel js-user-panel js-panel" data-module-selector=".js-user-panel" data-module-table="user">
+    <h2>Управление пользователями</h2>
+
+    <section class="all-items js-all-items">
+      <!-- <h3>Весь список</h3> -->
+      <div class="items">
+        <div class="item header">
+          <div class="param id">ID</div>
+          <div class="param holder">Holder</div>
+          <div class="param email">Email</div>
+          <div class="param name">ФИО</div>
+          <div class="param active">Активно?</div>
+          <div class="param edit"></div>
+          <div class="param delete"></div>
+        </div>
+        {{#each userRows}}
+          <div class="item js-item" data-id="{{this.user_uid_id}}" data-json="{{this.jsonData}}">
+            <div class="param id">{{this.user_uid_id}}</div>
+
+            {{#if this.holder_chr_name}}
+              <div class="param category">{{this.user_hld_holder}}: {{this.holder_chr_name}}</div>
+            {{else}}
+              <div class="param holder">{{this.user_hld_holder}}</div>
+            {{/if}}
+
+            <div class="param email">{{this.user_chr_email}}</div>
+            <div class="param name">{{this.user_chr_name}}</div>
+            <div class="param active">{{this.user_enm_active}}</div>
+            <div class="param edit js-edit">edit</div>
+            <div class="param delete js-delete">delete</div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <form enctype="multipart/form-data" method="post" class="js-transliterate-scope" data-form-fetch="refreshHtmlContent('/controlpanel', '.js-user-panel .js-all-items');">
+      <h3>Создание новой записи</h3>
+
+      <input type="hidden" name="moduleTable" value="image">
+      <input type="hidden" name="user_uid_id" value="" disabled>
+
+      <label class="primary type2 holder">
+        <div class="placeholder active optional">Holder</div>
+        <input type="text" name="user_hld_holder" value="" required>
+      </label>
+
+      <label class="primary type2 email">
+        <div class="placeholder active optional">Email</div>
+        <input type="email" name="user_chr_email" class="js-transliterate-from" value="">
+      </label>
+
+      <label class="primary type2 name">
+        <div class="placeholder active optional">ФИО</div>
+        <input type="text" name="user_chr_name" class="js-transliterate-from" value="">
+      </label>
+
+      <label class="primary type3 active">
+        <div class="placeholder">Активно?</div>
+        <label><input type="radio" name="user_enm_active" value="YES" checked required><span>YES</span></label>
+        <label><input type="radio" name="user_enm_active" value="NO" required><span>NO</span></label>
+      </label>
+
+      <div class="control-group">
+        <button class="btn-secondary" type="submit"></button>
+        <div class="edit-mode-close js-edit-mode-close"><i class="icon-arrow-left-circle"></i><span>Выйти из режима редактирования</span></div>
+        <p data-form-response></p>
+      </div>
+    </form>
+  </div>
+</section>

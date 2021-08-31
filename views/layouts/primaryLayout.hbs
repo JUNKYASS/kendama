@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="{{keywords}}">
+    <meta name="description" content="{{description}}">
+    <meta name="theme-color" content="#ffffff">
+    <title>{{title}}</title>
+    <link href="/images/favicon.ico" rel="shortcut icon">
+    <link href="/css/kendama.css?v=0.00" rel="stylesheet">
+  </head>
+
+  <body class="{{@root.page}}">
+    {{>header}}
+
+    <main>
+      {{{body}}}
+    </main>
+
+    {{>footer}}
+
+    <script src="/js/faze.min.js?v=0.00" charset="UTF-8"></script>
+    <script src="/js/kendama.js?v=0.00" charset="UTF-8"></script>
+    <!-- <script src="/i/js/vk_openapi.js" charset="UTF-8"></script> -->
+    <script src="/js/share.js" charset="UTF-8" async="async"></script>
+    <!-- <script src="/js/es5-shims.min.js" charset="UTF-8" async="async"></script> -->
+
+    <!-- Generated in {{@root.resultTime}} sec. -->
+  </body>
+</html>

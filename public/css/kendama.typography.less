@@ -1,0 +1,165 @@
+/*
+ * Typography CSS file, easytolose.ru
+ *
+ * Copyright (c) 2020 Mikhylichenko Ruslan, plarson.ru
+ *
+ * Date: 02-06-2020
+ *
+ */
+
+h1, .h1 {
+  margin-top: 25px;
+  margin-bottom: 45px;
+
+  font-size: 30px;
+  font-weight: 400;
+  font-family: Oswald;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: @screen-x-max) {
+    margin-bottom: 24px;
+
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+h2, .h2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  font-size: 26px;
+  font-weight: 400;
+  font-family: Oswald;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: @screen-x-max) {
+    font-size: 24px;
+    font-weight: 300;
+  }
+}
+
+h3, .h3 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+  font-size: 22px;
+  font-weight: 400;
+  font-family: Oswald;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: @screen-x-max) {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+h4, .h4 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Oswald;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: @screen-x-max) {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  word-break: break-word;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.narrow {
+    max-width: 668px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+p, a {
+
+}
+
+a {
+  text-decoration: none;
+
+  color: @palitra-beige;
+
+  transition: 0.2s;
+
+  &:hover {
+    color: @palitra-gray !important;
+  }
+
+  &.solid {
+    border-bottom: 1px solid @palitra-beige;
+
+    &:hover {
+      border-bottom: 1px solid @palitra-gray;
+    }
+  }
+
+  &.dotted {
+    border-bottom: 1px dotted @palitra-beige;
+
+    &:hover {
+      border-bottom: 1px dotted @palitra-gray;
+    }
+  }
+
+
+
+  &:active {
+    color: @palitra-beige;
+  }
+
+  &:visited {
+    color: @palitra-beige;
+  }
+
+  &:focus {
+    color: @palitra-beige;
+  }
+
+
+}
+
+ul {
+  list-style: none;
+}

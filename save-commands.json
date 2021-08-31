@@ -1,0 +1,5 @@
+{
+    "commands": [
+        "public/css/*.less : lessc public/css/kendama.less public/css/kendama.css"
+    ]
+}

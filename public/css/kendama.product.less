@@ -1,0 +1,304 @@
+/*
+ * Product Page CSS file, easytolose.ru
+ *
+ * Copyright (c) 2020 Mikhylichenko Ruslan, plarson.ru
+ *
+ * Date: 06-09-2020
+ */
+
+
+section.product-page {
+  & > .inner {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 44px;
+    padding-bottom: 44px;
+
+    // border-bottom: 1px solid @color-white1;
+
+    &:after {
+      content: "";
+
+      z-index: 0;
+      position: absolute;
+      left: -4px;
+      top: 32px;
+
+      width: 150px;
+      height: 400px;
+
+      background-image: url(/i/ivy2.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      filter: drop-shadow(2px 4px 6px black);
+      pointer-events: none;
+    }
+
+    &:before {
+      content: "";
+
+      z-index: 0;
+      position: absolute;
+      right: -4px;
+      top: 32px;
+
+      // width: 150px;
+      // height: 400px;
+      width: 87px;
+      height: 261px;
+
+      background-image: url(/i/ivy2.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      transform: rotateY(180deg);
+      filter: drop-shadow(2px 4px 6px black);
+      pointer-events: none;
+    }
+
+    & > .head {
+      grid-column: span 2;
+
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      grid-gap: 20px;
+      align-items: end;
+      padding-bottom: 20px;
+
+      border-bottom: 1px solid @palitra-gray;
+
+      h1 {
+        margin: 0;
+
+        font-size: 46px;
+        line-height: 1;
+      }
+
+      .price {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: -1px;
+        // margin-bottom: -2px;
+
+        font-weight: 200;
+        text-align: center;
+
+        transition: 0.2s ease;
+
+        &.discount {
+          .old {
+            display: block;
+          }
+
+          .current {
+            color: @palitra-pink;
+
+            .rub {
+
+            }
+          }
+
+          .discount-value {
+            display: block;
+          }
+        }
+
+        .current {
+          font-size: 24px;
+          font-weight: 100;
+          line-height: 1;
+          font-family: oswald;
+
+          .rub {
+            margin-left: -2px;
+
+            font-size: 16px;
+            font-weight: 300;
+            font-family: Raleway;
+
+            color: @palitra-gray;
+          }
+        }
+
+        .old {
+          position: relative;
+
+          display: none;
+          margin-bottom: 4px;
+
+          font-size: 16px;
+          font-weight: 100;
+          line-height: 1.06;
+          // text-decoration: line-through;
+          font-family: oswald;
+
+          &:before {
+            content: "";
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+
+            background-color: @color-white1;
+
+            transform: translateY(-50%);
+          }
+
+          .rub {
+            font-size: 12px;
+            font-weight: 300;
+            font-family: Raleway;
+
+            color: @palitra-gray;
+          }
+        }
+
+        .discount-value {
+          position: absolute;
+          left: -40px;
+          top: -21px;
+
+          display: none;
+
+          padding: 2px 5px;
+
+          font-size: 12px;
+
+          background-color: @color-green;
+
+          opacity: 0; // TEMP
+
+          &:after {
+            content: "";
+
+            position: absolute;
+            top: -4px;
+            left: 0;
+
+            width: 0;
+            height: 0;
+
+            border-bottom: 4px solid rgba(91, 156, 85, 0.53);
+            border-left: 10px solid transparent;
+
+            // width: 10px;
+            // height: 10px;
+            //
+            // background: linear-gradient(135deg, transparent 50%, #F4FEF9 50%);
+          }
+        }
+      }
+
+      .buy {
+        padding: 10px 45px;
+
+        font-weight: 200;
+
+        cursor: pointer;
+      }
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      // grid-gap: 85px;
+      grid-gap: 47px;
+
+      img {
+        width: 100%;
+        height: auto;
+
+        // border: 85px dashed #101010; // TEMP
+      }
+    }
+
+    .info {
+      position: relative;
+
+      display: grid;
+      padding: 0 47px 53px 0;
+
+      // &:after {
+      //   content: "";
+      //
+      //   position: absolute;
+      //
+      //   right: 0;
+      //   bottom: 0;
+      //
+      //   height: 30%;
+      //   width: 1px;
+      //
+      //   background-color: @color-gray4;
+      // }
+      //
+      // &:before {
+      //   content: "";
+      //
+      //   position: absolute;
+      //   right: 0;
+      //   bottom: 0;
+      //
+      //   height: 1px;
+      //   width: 70%;
+      //
+      //   background-color: @color-gray4;
+      // }
+
+      .parameters {
+        align-self: end;
+
+        .param {
+          position: relative;
+
+          display: flex;
+          justify-content: space-between;
+
+          font-size: 16px;
+          line-height: 0.8;
+
+          &:not(:first-child) {
+            margin-top: 40px;
+          }
+
+          &:after {
+            content: "";
+
+            z-index: -1;
+            position: absolute;
+            bottom: -12px;
+            left: -50px;
+
+            width: calc(100% + 60px);
+            height: 1px;
+
+            background-color: @color-ease;
+          }
+
+          .title {
+            // width: 50%;
+            color: @color-gray4;
+          }
+
+          .value {
+            font-weight: 600;
+
+            color: @color-beige;
+          }
+        }
+      }
+    }
+  }
+}

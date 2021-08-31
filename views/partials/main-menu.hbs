@@ -1,0 +1,9 @@
+<div class="main-menu">
+  <nav>
+    {{#each @root.mainMenu}}
+      <a href="{{this.url}}" class="{{this.isActive}} {{this.isHighlighted}}">
+        <span class="name">{{this.name}}</span>
+      </a>
+    {{/each}}
+  </nav>
+</div>

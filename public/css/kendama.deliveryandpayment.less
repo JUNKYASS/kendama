@@ -1,0 +1,94 @@
+/*
+ * DeliveryAndPayment CSS file, easytolose.ru
+ *
+ * Copyright (c) 2021 Mikhylichenko Ruslan, plarson.ru
+ *
+ * Date: 28-02-2021
+ */
+
+section.deliveryandpayment {
+  & > .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+
+    // .faze-tabs {
+    //   .faze-tabs-headers {
+    //     width: 100%;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //
+    //     .faze-tab-header {
+    //       width: 50%;
+    //       padding: 0 0 15px 0;
+    //       margin: 0;
+    //
+    //       border-bottom: 1px solid #545454;
+    //       color: @palitra-beige;
+    //
+    //       cursor: pointer;
+    //
+    //       &:hover {
+    //         color: @palitra-beige;
+    //       }
+    //
+    //       &.faze-active {
+    //         border-bottom: 1px solid @palitra-beige;
+    //       }
+    //     }
+    //   }
+    //
+    //   .faze-tabs-bodies {
+    //     min-height: 350px;
+    //     margin-top: 35px;
+    //
+    //     .faze-tab-body {
+    //       .text {
+    //         font-size: 16px;
+    //       }
+    //     }
+    //   }
+    // }
+
+    .option {
+      .heading {
+        width: 100%;
+        padding: 0 0 10px 0;
+        margin: 0;
+
+        border-bottom: 1px solid #545454;
+        color: @palitra-beige;
+
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+      }
+
+      .text {
+        margin-top: 20px;
+
+        font-size: 16px;
+      }
+
+      &.faq {
+        grid-column: span 2;
+        margin-top: 30px;
+
+        .heading {
+          color: @color-white1;
+        }
+
+        .items {
+          margin-top: 20px;
+          font-size: 16px;
+
+          .item {
+            &:not(:first-child) {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

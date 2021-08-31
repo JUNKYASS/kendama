@@ -1,0 +1,91 @@
+/*
+ * Catalog CSS file, easytolose.ru
+ *
+ * Copyright (c) 2020 Mikhylichenko Ruslan, plarson.ru
+ *
+ * Date: 15-08-2020
+ */
+
+
+section.products {
+  .text {
+    display: none;
+  }
+
+  & > .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 100px 40px;
+    justify-items: center;
+
+  }
+
+  @media (max-width: @screen-e-max) {
+    & > .items {
+      .product-item[common] {
+        .inner {
+          & > .info {
+            .images {
+              // max-width: 220px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: @screen-l-max) {
+    & > .items {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .product-item[common] {
+        .inner {
+          & > .info {
+            .images {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    & > .items {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 60px 40px;
+
+      .product-item[common] {
+        width: 100%;
+
+        .inner > {
+          .info {
+            .images {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: @screen-x-max) {
+    & > .items {
+      grid-gap: 40px 20px;
+
+      .product-item[common] {
+        .inner > {
+          .info {
+            .name {
+
+            }
+          }
+
+          & > .purchase {
+            
+          }
+        }
+      }
+    }
+  }
+}

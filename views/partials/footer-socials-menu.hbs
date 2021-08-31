@@ -1,0 +1,13 @@
+<div class="socials">
+  <h4>Соц. сети</h4>
+  <div class="items">
+    {{#each @root.socialsMenu}}
+      <div class="item">
+        <a href="{{this.url}}" target="_blank">
+          <img src="{{this.icon}}" alt="image-{{this.name}}" />
+          <div class="name">{{this.name}}</div>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</div>

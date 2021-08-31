@@ -1,0 +1,13 @@
+<div class="footer-main-menu">
+  <h4>Навигация</h4>
+  <nav>
+    {{#each @root.mainMenu}}
+      <a href="{{this.url}}" class="{{this.isActive}} {{this.isHighlighted}}">
+        <svg viewBox="0 0 24 24">
+          <use href="{{this.icon}}"></use>
+        </svg>
+        <span class="name">{{this.name}}</span>
+      </a>
+    {{/each}}
+  </nav>
+</div>
