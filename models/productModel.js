@@ -1,4 +1,4 @@
-const db = require('../utils/db.js');
+const { db } = require('../utils/db.js');
 
 const tableName = 'product';
 

@@ -1,7 +1,8 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const session = require('express-session');
 
 const homepageRouter = require('./routes/homepage');
 const controlpanelRouter = require('./routes/controlpanel');
@@ -16,6 +17,8 @@ const authRouter = require('./routes/auth');
 const variableMiddleware = require('./middleware/variable');
 const menuMiddleware = require('./middleware/menu');
 const dbTablesCreate = require('./utils/db_tables_create');
+const keys = require('./keys');
+const { sessionStore } = require('./utils/db');
 
 // const hrstart = process.hrtime();
 
@@ -32,8 +35,14 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(path.join(__dirname, 'images'))); // Делаем папку с картинками статической, чтобы к ней был доступ извне
+app.use(session({ // Задаём и настраиваем сессии
+  secret: keys.COOKIES_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: sessionStore // MysqlStore
+}));
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.use(variableMiddleware);

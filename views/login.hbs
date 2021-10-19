@@ -1,15 +1,16 @@
 <section class="login js-login-section content-middle">
   <h1>Авторизоваться в системе</h1>
 
-  <form class="login-form js-login-form" action="/auth/login" method="post">
+  <form class="login-form js-login-form" action="/auth/login" method="post" data-form-fetch data-form-response>
+    <p></p>
     <label class="primary type2 email">
       <div class="placeholder">Email</div>
-      <input type="email" name="user_chr_name" value="" data-js-placeholder required>
+      <input type="email" name="user_chr_email" value="" autocomplete="new-password" data-js-placeholder required>
     </label>
 
     <label class="primary type2 password">
       <div class="placeholder">Пароль</div>
-      <input type="password" name="user_chr_pass" value="" data-js-placeholder required>
+      <input type="password" name="user_chr_pass" value="" autocomplete="new-password" data-js-placeholder required>
     </label>
 
     <div class="control-group">

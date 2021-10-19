@@ -20,4 +20,9 @@ exports.regValidators = [
 
     return true;
   })
-]
+];
+
+exports.loginValidators = [
+  body('user_chr_email', 'Введите корректный email').isEmail(),
+  body('user_chr_pass', 'Пароль должен быть минимум 6 символов').isLength({min: 6, max: 56}).isAlphanumeric().trim(),
+];

@@ -1,4 +1,4 @@
-const db = require('../utils/db.js');
+const { db } = require('../utils/db.js');
 
 class Delivery {
   constructor() {
@@ -28,12 +28,12 @@ class Delivery {
 
       const [result] = await db.execute(query)
 
-      if(result.warningStatus == 0) {
+      if (result.warningStatus == 0) {
         return `Table ${this.tableName.toUpperCase()} has been created...`;
       } else {
         return `Table ${this.tableName.toUpperCase()} is ready...`;
       }
-    } catch(e) {
+    } catch (e) {
       console.error(`ERROR on creating ${this.tableName.toUpperCase()} table: ${e.sqlMessage}`);
     }
   }

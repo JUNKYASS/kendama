@@ -1,4 +1,4 @@
-const db = require('../utils/db.js');
+const { db } = require('../utils/db.js');
 
 const tableName = 'image';
 
@@ -128,9 +128,9 @@ class Image {
       delete curRow[0].image_smp_update;
       delete newRow.moduleTable;
 
-      for(let key in curRow[0]) { // Перебираем полученные из selectById данные и модифицируем данные в newRow, создавая объек, который будет загружать в базу
-        if(!(key in newRow) || typeof newRow[key] === 'undefined') newRow[key] = curRow[0][key]; // Вставляем в новый массив то, что не было передавно или передано со значение undefined (подробнее: Если значение полученное из базы не имеется в newRow или в newRow значение равно undefined, то в newRow записываем значение из базы)
-        if(newRow[key] === '') newRow[key] = null; // Меняем все значения раные '' на null
+      for(let key in curRow[0]) { // Перебираем полученные из selectById данные и модифицируем данные в newRow, создавая объект, который будем загружать в базу
+        if(!(key in newRow) || typeof newRow[key] === 'undefined') newRow[key] = curRow[0][key]; // Вставляем в новый массив то, что не было передано или передано со значение undefined (подробнее: Если значение полученное из базы не имеется в newRow или в newRow значение равно undefined, то в newRow записываем значение из базы)
+        if(newRow[key] === '') newRow[key] = null; // Меняем все значения равные '' на null
       }
 
       return await db.execute(

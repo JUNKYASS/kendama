@@ -997,3 +997,8 @@ Faze.add({
     });
   }
 }); // Кастомизируем инпуты типа file
+
+document.fonts.ready.then(function() {
+  // Any operation that needs to be done only after all the fonts
+  // have finished loading can go here.
+});
