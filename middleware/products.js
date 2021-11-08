@@ -1,15 +1,25 @@
 // Файл генерации объектов товаров. Необходим для доступа к товарам из HTML шаблонов через @root...
+const Products = require('../models/productModel');
 
-const productsBestOffer = (req, res, next) => {
-  return {
-    // Здесь нужно вытащить товары из базы и сложить их в объект, для этого:
-    // 1. Редактировать структуру таблицы product - добавить поля product_enm_hot, product_enm_new
-    // 2. Редактировать запрос select в модели productModel.js
-    // 3. Создать отдельный запрос на получение товаров "best offer"
-    // 4. Добавить товары в базу данных
-  };
+const getProducts = async (req, res, next) => {
+  const [products] = await Products.select();
+  res.locals.products = products;
+
+  next()
+};
+
+const getBestOfferProducts = async (req, res, next) => {
+  const [products] = await Products.selectBestOffer();
+
+  res.locals.bestOfferProducts = products.map((item, i) => {
+    item.rowNumber = ++i; // Модифицируем товары
+    return item;
+  });
+
+  next();
 };
 
 module.exports = {
-  productsBestOffer
+  getProducts,
+  getBestOfferProducts,
 }

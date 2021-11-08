@@ -13,6 +13,7 @@ class Image {
     try {
       const query = `CREATE TABLE IF NOT EXISTS kendama.${tableName} (
         image_uid_id INT NOT NULL AUTO_INCREMENT,
+        image_chr_url VARCHAR(255) NOT NULL,
         image_mbr_member INT NULL DEFAULT 0,
         image_hld_holder INT NULL DEFAULT 0,
         image_img_image VARCHAR(255) NULL,
@@ -24,7 +25,8 @@ class Image {
         PRIMARY KEY (image_uid_id),
         FOREIGN KEY (image_hld_holder) REFERENCES system_holder (holder_uid_id) ON DELETE SET NULL,
         INDEX member_INDEX (image_mbr_member ASC) VISIBLE,
-        INDEX holder_INDEX (image_hld_holder ASC) VISIBLE
+        INDEX holder_INDEX (image_hld_holder ASC) VISIBLE,
+        UNIQUE INDEX chr_url_UNIQUE_INDEX (image_chr_url ASC) VISIBLE
       ) ENGINE = InnoDB, DEFAULT CHARACTER SET = utf8, COLLATE = utf8_general_ci;`;
 
       const result = await db.execute(query)
@@ -47,6 +49,7 @@ class Image {
         `
         SELECT
           image_uid_id,
+          image_chr_url,
           image_mbr_member,
           image_hld_holder,
           image_img_image,
@@ -86,14 +89,16 @@ class Image {
         `
         INSERT INTO ${tableName}
         (
+          image_chr_url,
           image_mbr_member,
           image_hld_holder,
           image_img_image,
           image_chr_name,
           image_enm_active
-        ) VALUES (?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?)
         `,
         [
+          body.image_chr_url ? body.image_chr_url : 0,
           body.image_mbr_member ? body.image_mbr_member : 0,
           body.image_hld_holder ? body.image_hld_holder : 0,
           body.image_img_image ? body.image_img_image : null,
@@ -136,6 +141,7 @@ class Image {
       return await db.execute(
         `
         UPDATE ${tableName} SET
+          image_chr_url = ?,
           image_mbr_member = ?,
           image_hld_holder = ?,
           image_img_image = ?,
@@ -144,11 +150,12 @@ class Image {
         WHERE image_uid_id = ?
         `,
         [
+          newRow.image_chr_url ? newRow.image_chr_url : 0,
           newRow.image_mbr_member ? newRow.image_mbr_member : 0,
           newRow.image_hld_holder ? newRow.image_hld_holder : 0,
           newRow.image_img_image ? newRow.image_img_image : null,
           newRow.image_chr_name ? newRow.image_chr_name : null,
-          newRow.image_enm_active ? newRow.image_enm_active : null,
+          newRow.image_enm_active ? newRow.image_enm_active : 'YES',
           newRow.image_uid_id
         ]
       );

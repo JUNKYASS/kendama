@@ -8,6 +8,7 @@ const Order = require('../models/orderModel');
 const Delivery = require('../models/deliveryModel');
 const Payment = require('../models/paymentModel');
 const News = require('../models/newsModel');
+const List = require('../models/listModel');
 
 module.exports = async () => {
   // Генерируем таблицы в БД, если их нет
@@ -17,6 +18,7 @@ module.exports = async () => {
   const folderModel = await new Folder();
   const productModel = await new Product();
   const imageModel = await new Image();
+  const listModel = await new List();
   const userModel = await new User();
   const orderModel = await new Order();
   const cartModel = await new Cart();
@@ -27,6 +29,7 @@ module.exports = async () => {
     ${folderModel}
     ${holderModel}
     ${imageModel}
+    ${listModel}
     ${userModel}
     ${cartModel}
     ${orderModel}

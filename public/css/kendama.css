@@ -3475,7 +3475,7 @@ body > footer > .inner .bottom-part > .inner .copy-text a {
     padding: 25px 0 92px 0;
   }
 }
-body.page-home {
+body.page-homepage {
   position: relative;
 }
 /*
@@ -4464,11 +4464,11 @@ textarea {
  * Date: 02-06-2020
  *
  */
-body.page-home header {
+body.page-homepage header {
   position: relative;
   padding: 0;
 }
-body.page-home header > .inner {
+body.page-homepage header > .inner {
   z-index: 2;
   position: absolute;
   left: 50%;
@@ -4476,14 +4476,14 @@ body.page-home header > .inner {
   height: unset;
   transform: translateX(-50%);
 }
-body.page-home header section.homepage-banner {
+body.page-homepage header section.homepage-banner {
   position: relative;
   display: grid;
   justify-items: end;
   height: 100vh;
   width: 100%;
 }
-body.page-home header section.homepage-banner .info {
+body.page-homepage header section.homepage-banner .info {
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -4496,11 +4496,11 @@ body.page-home header section.homepage-banner .info {
   height: 100%;
   transform: translate(-50%, -50%);
 }
-body.page-home header section.homepage-banner .info .headline-block {
+body.page-homepage header section.homepage-banner .info .headline-block {
   margin-left: -5px;
   padding-bottom: 15px;
 }
-body.page-home header section.homepage-banner .info .headline-block .upper-headline {
+body.page-homepage header section.homepage-banner .info .headline-block .upper-headline {
   z-index: -1;
   position: relative;
   display: none;
@@ -4510,7 +4510,7 @@ body.page-home header section.homepage-banner .info .headline-block .upper-headl
   text-transform: uppercase;
   color: rgba(148, 139, 132, 0.38);
 }
-body.page-home header section.homepage-banner .info .headline-block h1.headline {
+body.page-homepage header section.homepage-banner .info .headline-block h1.headline {
   margin-top: -45px;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -4518,10 +4518,10 @@ body.page-home header section.homepage-banner .info .headline-block h1.headline 
   color: #C3946D;
   text-shadow: 0px -6px 20px rgba(0, 0, 0, 0.5);
 }
-body.page-home header section.homepage-banner .info .headline-block h1.headline span {
+body.page-homepage header section.homepage-banner .info .headline-block h1.headline span {
   color: #D7C2B0;
 }
-body.page-home header section.homepage-banner .info .headline-block .lower-headline {
+body.page-homepage header section.homepage-banner .info .headline-block .lower-headline {
   margin: -20px 0 0 4px;
   width: max-content;
   font-size: 32px;
@@ -4531,22 +4531,22 @@ body.page-home header section.homepage-banner .info .headline-block .lower-headl
   box-shadow: 0 -8px 20px 20px rgba(20, 20, 20, 0.67);
   opacity: 0.8;
 }
-body.page-home header section.homepage-banner .info .text {
+body.page-homepage header section.homepage-banner .info .text {
   max-width: 700px;
   font-size: 16px;
   font-weight: 300;
   color: #D7C2B0;
 }
-body.page-home header section.homepage-banner .info .btn-primary {
+body.page-homepage header section.homepage-banner .info .btn-primary {
   align-self: start;
 }
-body.page-home header section.homepage-banner .banner-images {
+body.page-homepage header section.homepage-banner .banner-images {
   position: relative;
   height: 100%;
   width: 60%;
   overflow: hidden;
 }
-body.page-home header section.homepage-banner .banner-images img.static-part {
+body.page-homepage header section.homepage-banner .banner-images img.static-part {
   position: absolute;
   top: 0;
   left: 0;
@@ -4554,7 +4554,7 @@ body.page-home header section.homepage-banner .banner-images img.static-part {
   height: 100%;
   object-fit: cover;
 }
-body.page-home header section.homepage-banner .banner-images img.moving-part {
+body.page-homepage header section.homepage-banner .banner-images img.moving-part {
   z-index: -1;
   position: absolute;
   top: 40%;
@@ -4564,33 +4564,33 @@ body.page-home header section.homepage-banner .banner-images img.moving-part {
   transform: translate(-50%, -50%);
   object-fit: contain;
 }
-body.page-home main {
+body.page-homepage main {
   margin-top: 0;
 }
 @media (max-width: 828px) {
-  body.page-home header section.homepage-banner .info .headline-block h1.headline {
+  body.page-homepage header section.homepage-banner .info .headline-block h1.headline {
     font-size: 60px;
   }
-  body.page-home header section.homepage-banner .info .headline-block .lower-headline {
+  body.page-homepage header section.homepage-banner .info .headline-block .lower-headline {
     margin: -10px 0 0 4px;
   }
-  body.page-home header section.homepage-banner .info .text {
+  body.page-homepage header section.homepage-banner .info .text {
     font-size: 14px;
   }
 }
 @media (max-width: 540px) {
-  body.page-home header section.homepage-banner .info {
+  body.page-homepage header section.homepage-banner .info {
     grid-template-rows: 2fr auto 2.5fr;
   }
-  body.page-home header section.homepage-banner .info .headline-block h1.headline {
+  body.page-homepage header section.homepage-banner .info .headline-block h1.headline {
     font-size: 34px;
   }
-  body.page-home header section.homepage-banner .info .headline-block .lower-headline {
+  body.page-homepage header section.homepage-banner .info .headline-block .lower-headline {
     margin: -4px 0 0 1px;
     font-size: 20px;
     box-shadow: 0 -3px 20px 5px rgba(20, 20, 20, 0.67);
   }
-  body.page-home header section.homepage-banner .info .text {
+  body.page-homepage header section.homepage-banner .info .text {
     font-size: 12px;
   }
 }
@@ -4687,12 +4687,12 @@ section.homepage section.about .content .info .text {
 section.homepage section.about .content .info .btn-primary {
   margin-top: 60px;
 }
-section.homepage section.bestoffer {
+section.homepage section.best-offer {
   position: relative;
   margin-top: 148px;
-  padding-bottom: 230px;
+  padding-bottom: 150px;
 }
-section.homepage section.bestoffer .bg-clippy {
+section.homepage section.best-offer .bg-clippy {
   z-index: -1;
   position: absolute;
   top: 400px;
@@ -4700,7 +4700,7 @@ section.homepage section.bestoffer .bg-clippy {
   width: 100%;
   height: 100%;
 }
-section.homepage section.bestoffer .bg-clippy:after {
+section.homepage section.best-offer .bg-clippy:after {
   content: "";
   z-index: -2;
   position: absolute;
@@ -4712,7 +4712,7 @@ section.homepage section.bestoffer .bg-clippy:after {
   clip-path: polygon(56% 52%, 67% 46%, 84% 43%, 100% 27%, 100% 100%, 0 100%, 4% 86%, 16% 75%, 28% 62%, 40% 58%);
   transition: 0.3s ease;
 }
-section.homepage section.bestoffer .bg-clippy:before {
+section.homepage section.best-offer .bg-clippy:before {
   content: "";
   z-index: -1;
   position: absolute;
@@ -4724,13 +4724,13 @@ section.homepage section.bestoffer .bg-clippy:before {
   clip-path: polygon(57% 59%, 67% 50%, 83% 49%, 100% 42%, 100% 100%, 0 100%, 0 86%, 17% 77%, 28% 66%, 41% 63%);
   transition: 1s ease;
 }
-section.homepage section.bestoffer .headline-block h2 {
+section.homepage section.best-offer .headline-block h2 {
   color: #fff;
 }
-section.homepage section.bestoffer .headline-block h2 span {
+section.homepage section.best-offer .headline-block h2 span {
   color: #D7C2B0;
 }
-section.homepage section.bestoffer > .inner .controls {
+section.homepage section.best-offer > .inner .controls {
   background-image: unset;
 }
 section.homepage section.advantages-and-news {
@@ -4790,14 +4790,14 @@ section.homepage section.advantages-and-news .inner .news .items .item .group .c
 section.homepage section.advantages-and-news .inner .news .items .item .group .text {
   z-index: 1;
   position: absolute;
-  bottom: -18%;
-  left: -15%;
+  bottom: -30%;
+  left: -30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: start;
   height: 100%;
-  width: 100%;
+  width: 150%;
 }
 section.homepage section.advantages-and-news .inner .news .items .item .group .text span {
   font-weight: 500;
@@ -4814,14 +4814,15 @@ section.homepage section.advantages-and-news .inner .news .items .item .group .i
 }
 section.homepage section.advantages-and-news .inner .news .items .item .group .image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 section.homepage section.advantages-and-news .inner .news .items .item .group .gradient-element {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 70%;
+  height: 100%;
 }
 section.homepage section.advantages-and-news .inner .news .btn-primary {
   float: right;
@@ -4930,7 +4931,7 @@ section.homepage section.quote {
 section.homepage section.quote blockquote {
   z-index: 1;
   position: relative;
-  top: 3%;
+  top: 7%;
   margin: 0;
   margin-right: 50px;
   padding-right: 15px;
@@ -4971,7 +4972,7 @@ section.homepage section.quote:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/i/bg-for-attachment.jpg');
+  background-image: url('/images/photo/bg-for-attachment.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -4984,7 +4985,7 @@ section.homepage section.quote .bg-clippy {
   bottom: -1px;
   left: 0;
   width: 100%;
-  height: 40%;
+  height: 50%;
   transform: rotateY(180deg);
 }
 section.homepage section.quote .bg-clippy:before {
@@ -5356,19 +5357,19 @@ section.homepage section.advantages .items .item .group2 .text {
     margin-bottom: 20px;
     font-size: 16px;
   }
-  section.homepage section.bestoffer {
+  section.homepage section.best-offer {
     margin-top: 60px;
     padding-bottom: 40px;
   }
-  section.homepage section.bestoffer .bg-clippy {
+  section.homepage section.best-offer .bg-clippy {
     top: unset;
     display: none;
     height: 70%;
   }
-  section.homepage section.bestoffer .bg-clippy:before {
+  section.homepage section.best-offer .bg-clippy:before {
     height: 40%;
   }
-  section.homepage section.bestoffer .bg-clippy:after {
+  section.homepage section.best-offer .bg-clippy:after {
     top: -57px;
     height: 50%;
   }

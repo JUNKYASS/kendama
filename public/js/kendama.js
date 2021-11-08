@@ -126,7 +126,7 @@ Faze.add({
 
     document.addEventListener("mousemove", (e) => {
       // чтобы работал параллакс необходимо раскомментировать
-      allowMove ? parallax(e, parallaxFarImgNode, 0, parallaxCloseImgNode) : true;
+      // allowMove ? parallax(e, parallaxFarImgNode, 0, parallaxCloseImgNode) : true;
     });
   }
 });

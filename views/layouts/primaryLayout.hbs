@@ -17,14 +17,14 @@
     <link rel="preload" as="font" href="/fonts/oswald/Oswald-ExtraLight.woff2" type="font/woff2" crossorigin="anonymous">
   </head>
 
-  <body class="{{ @root.page }}">
-    {{> header }}
+  <body class="page-{{ @root.page }}">
+    {{> layout/primary/header }}
 
     <main>
       {{{ body }}}
     </main>
 
-    {{> footer }}
+    {{> layout/primary/footer }}
 
     <script src="/js/faze.min.js?v=0.00" charset="UTF-8"></script>
     <script src="/js/kendama.js?v=0.00" charset="UTF-8"></script>

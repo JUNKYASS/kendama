@@ -1,0 +1,25 @@
+<section class="homepage-socials js-homepage-socials content-middle">
+  <div class="homepage-vk js-homepage-vk">
+    <div class="vk-reviews js-vk-reviews">
+    <div class="headline-block common-headline">
+      <h2 class="font-oswald"><span>Отзывы</span><!-- <span class="icon icon-social-vkontakte"></span> --></h2>
+      <div class="text">Реальные отзывы из нашего <a href="https://vk.com/easytolose" class="solid" target="_blank">сообщества ВКонтакте</a> людей, которые уже приобрели кендаму.</div>
+    </div>
+    
+    {{#each homepageReviews}}
+      <a class="review" href="https://vk.com/topic-151220089_36243482" target="_blank">
+        <img class="photo" src="images/photo/{{{ list_img_image }}}" alt="Фото пользователя {{{list_chr_name}}}">
+        <div class="name font-oswald">{{{list_chr_name}}}</div>
+        <div class="text">{{{list_txt_text}}}</div>
+      </a>
+    {{/each}}
+
+    <a href="https://vk.com/topic-151220089_36243482" target="_blank" class="btn-catalog btn-primary less-visible font-oswald">
+      Читать все отзывы
+      <svg viewBox="0 0 74 10" class="arrow">
+      <use href="#arrow"></use>
+      </svg>
+    </a>
+    </div>
+  </div>
+</section>
