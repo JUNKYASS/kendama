@@ -1,0 +1,56 @@
+<section class="advantages-and-news">
+  <div class="inner content-middle">
+    <div class="news">
+      <div class="headline-block common-headline">
+        <h2 class="font-oswald"><span>Последние новости</span></h2>
+        <span class="lesser-heading"></span>
+      </div>
+
+      <div class="items">
+
+        {{#each homepageNews}}
+        <div class="item">
+          <div class="group">
+            <div class="caption">{{{news_chr_name}}}</div>
+            <div class="text"><span>{{{news_txt_text}}}...</span><br/><a href="{{{news_chr_url}}}">читать далее</a></div>
+
+            <div class="image"><img src="/images/photo/{{{news_img_image1}}}" alt="{{{news_chr_name}}}" /></div>
+            <div class="gradient-element"></div>
+          </div>
+        </div>
+        {{/each}}
+
+      </div>
+
+      <a href="/about.html" class="btn-primary less-visible font-oswald">
+        Читать все новости
+        <svg viewBox="0 0 74 10" class="arrow">
+          <use href="#arrow"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="advantages">
+      <div class="headline-block common-headline">
+        <h2 class="font-oswald"><span>Почему</span> именно мы?</h2>
+      </div>
+
+      <div class="items">
+        {{#each advantagesVertical}}
+          <div class="item">
+            <div class="group1">
+              <div class="icon icon-{{{list_chr_info1}}}"></div>
+              <div class="number font-oswald"><span>0</span>{{{rowNumber}}}</div>
+            </div>
+
+            <div class="group2">
+              <div class="caption">{{{list_chr_name}}}</div>
+              <div class="text">{{{list_txt_text}}}</div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="bg-clippy"></div>
+</section>

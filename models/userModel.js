@@ -1,15 +1,17 @@
-const db = require('../utils/db.js');
+const { db } = require('../utils/db.js');
+
+const tableName = 'user';
 
 class User {
   constructor() {
-    this.tableName = 'user';
+    // this.tableName = 'user';
 
     return this.createTable();
   }
 
   async createTable() {
     try {
-      const query = `CREATE TABLE IF NOT EXISTS kendama.${this.tableName} (
+      const query = `CREATE TABLE IF NOT EXISTS kendama.${tableName} (
         user_uid_id INT NOT NULL AUTO_INCREMENT,
         user_hld_holder INT NULL DEFAULT 0,
         user_chr_email VARCHAR(255) NOT NULL,
@@ -45,12 +47,12 @@ class User {
       const [result] = await db.execute(query)
 
       if(result.warningStatus == 0) {
-        return `Table ${this.tableName.toUpperCase()} has been created...`;
+        return `Table ${tableName.toUpperCase()} has been created...`;
       } else {
-        return `Table ${this.tableName.toUpperCase()} is ready...`;
+        return `Table ${tableName.toUpperCase()} is ready...`;
       }
     } catch(e) {
-      console.error(`ERROR on creating ${this.tableName.toUpperCase()} table: ${e.sqlMessage}`);
+      console.error(`ERROR on creating ${tableName.toUpperCase()} table: ${e.sqlMessage}`);
     }
   }
 
@@ -58,7 +60,7 @@ class User {
 
   static async select() {
     try {
-      return await db.execute(`SELECT * FROM ${this.tableName} WHERE TRUE ORDER BY user_uid_id ASC`);
+      return await db.execute(`SELECT * FROM ${tableName} WHERE TRUE ORDER BY user_uid_id ASC`);
     } catch(e) {
       console.error(e);
 
@@ -68,7 +70,7 @@ class User {
 
   static async selectByEmail(email) {
     try {
-      return await db.execute(`SELECT * FROM ${this.tableName} WHERE user_chr_email = ?`, [email]);
+      return await db.execute(`SELECT * FROM ${tableName} WHERE user_chr_email = ?`, [email]);
     } catch(e) {
       const err = e.sqlMessage ? e.sqlMessage : e;
       console.log(err);
@@ -79,7 +81,7 @@ class User {
 
   static async selectById(id) {
     try {
-      return await db.execute(`SELECT * FROM ${this.tableName} WHERE user_uid_id = ?`, [id]);
+      return await db.execute(`SELECT * FROM ${tableName} WHERE user_uid_id = ?`, [id]);
     } catch(e) {
       const err = e.sqlMessage ? e.sqlMessage : e;
       console.log(err);
@@ -92,7 +94,7 @@ class User {
     try {
       return await db.execute(
         `
-        INSERT INTO ${this.tableName}
+        INSERT INTO ${tableName}
         (
           user_hld_holder,
           user_chr_email,
@@ -115,7 +117,7 @@ class User {
 
   static async delete(body) {
     try {
-      return await db.execute(`DELETE FROM ${this.tableName} WHERE user_uid_id = (?)`, [body.id]);
+      return await db.execute(`DELETE FROM ${tableName} WHERE user_uid_id = (?)`, [body.id]);
     } catch(e) {
       const err = e.sqlMessage ? e.sqlMessage : e;
       console.log(err);

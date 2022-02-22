@@ -1,0 +1,79 @@
+<section class="most-famous">
+  <div class="headline-block common-headline content-middle">
+    <h2 class="font-oswald"><span>Наиболее</span> популярные</h2>
+    <div class="text">Кендамы, которые пользуются наибольшим спросом среди пользователей</div>
+  </div>
+
+  <div class="inner common-carousel js-common-carousel-holder content-middle">
+    <div class="items js-common-carousel" data-amount-in-group=3 data-counter=true>
+      {{#each productsMostFamous }}
+        <div class="product-item js-product-item" common data-index="{{ this.rowNumber }}">
+          <div class="inner">
+            {{!-- <div class="additional-photo js-additional-photo ##additional_photo_display##">
+              ##additional_photo##
+            </div> --}}
+
+            <a href="/catalog/kendama/{{ this.product_chr_url }}" class="info">
+              <div class="labels {{ this.discount_class }} {{ this.new_class }} {{ this.hot_class }} ">
+                <div class="item new"><span class="icon icon-rocket"></span></div>
+                <div class="item hot"><span class="icon icon-fire"></span></div>
+              </div>
+
+              <div class="name">{{ this.product_chr_name }}</div>
+
+              <div class="images">
+                <img src="images/product/{{ this.product_img_image2 }}" alt="Alternative photo for {{ this.product_chr_name }}" class="js-alternative-image" data-photo-src="images/product/{{ this.product_img_image2 }}" />
+                <img src="images/product/{{ this.product_img_image1 }}" alt="Kendama {{ this.product_chr_name }}" class="js-image" data-photo-src="images/product/{{ this.product_img_image1 }}">
+
+                <div class="image-border"></div>
+              </div>
+            </a>
+
+            <div class="purchase">
+              <div class="price {{ this.discount_class }} ">
+                <div class="old">{{ this.product_dec_oldprice }} <span class="rub">руб.</span></div>
+                <div class="current">{{ this.product_dec_price }} <span class="rub">руб.</span></div>
+                <div class="discount-value">-{{ this.discount_amount }}%</div>
+              </div>
+
+              <div class="btn-buy js-btn-buy" data-product-id="{{ this.product_uid_id }}">
+                <svg viewBox="0 0 24 24">
+                  <use href="#cart-add"></use>
+                </svg>
+                <span class="caption">В корзину</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="controls">
+      <div class="icon icon-fire"></div>
+      <div class="status-bar">
+        <div class="carriage"></div>
+      </div>
+
+      <div class="prevnext-controls">
+        <div class="carousel-arrow arrow-prev js-arrowPrev">
+          <svg viewBox="0 0 74 10" class="arrow">
+            <use href="#arrow"></use>
+          </svg>
+        </div>
+
+        <div class="carousel-arrow arrow-next js-arrowNext">
+          <svg viewBox="0 0 74 10" class="arrow">
+            <use href="#arrow"></use>
+          </svg>
+        </div>
+      </div>
+
+      <a href="/catalog/" class="btn-catalog btn-primary font-oswald">
+        Купить кендаму
+        <svg viewBox="0 0 74 10" class="arrow">
+          <use href="#arrow"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

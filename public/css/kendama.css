@@ -5,10 +5,11 @@
  *
  * Date: 02-06-2020
  */
+@import "../fonts/raleway/raleway.css";
+@import "../fonts/oswald/oswald.css";
 @font-face {
   font-family: 'simple-line-icons';
-  src: url('../fonts/simple-line-icons/Simple-Line-Icons.eot?v=2.4.0');
-  src: url('../fonts/simple-line-icons/Simple-Line-Icons.eot?v=2.4.0#iefix') format('embedded-opentype'), url('../fonts/simple-line-icons/Simple-Line-Icons.woff2?v=2.4.0') format('woff2'), url('../fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.4.0') format('truetype'), url('../fonts/simple-line-icons/Simple-Line-Icons.woff?v=2.4.0') format('woff'), url('../fonts/simple-line-icons/Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg');
+  src: url('../fonts/simple-line-icons/Simple-Line-Icons.woff2?v=2.4.0') format('woff2'), url('../fonts/simple-line-icons/Simple-Line-Icons.eot?v=2.4.0'), url('../fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.4.0') format('truetype'), url('../fonts/simple-line-icons/Simple-Line-Icons.woff?v=2.4.0') format('woff'), url('../fonts/simple-line-icons/Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -782,192 +783,6 @@
 }
 .icon-social-steam:before {
   content: "\e620";
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-ThinItalic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-ThinItalic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-ThinItalic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-ThinItalic.ttf') format('truetype');
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-ExtraBold.eot');
-  src: url('/fonts/raleway/Raleway-v4020-ExtraBold.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-ExtraBold.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-Bold.eot');
-  src: url('/fonts/raleway/Raleway-v4020-Bold.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-Bold.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-BoldItalic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-BoldItalic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-BoldItalic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-Medium.eot');
-  src: url('/fonts/raleway/Raleway-v4020-Medium.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-Medium.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-SemiBold.eot');
-  src: url('/fonts/raleway/Raleway-v4020-SemiBold.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-SemiBold.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-Black.eot');
-  src: url('/fonts/raleway/Raleway-v4020-Black.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-Black.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-MediumItalic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-MediumItalic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-MediumItalic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-MediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-ExtraLightItalic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-ExtraLightItalic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-ExtraLightItalic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-ExtraLightItalic.ttf') format('truetype');
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-Regular.eot');
-  src: url('/fonts/raleway/Raleway-v4020-Regular.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-Regular.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-SemiBoldItalic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-SemiBoldItalic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-SemiBoldItalic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-SemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-BlackItalic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-BlackItalic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-BlackItalic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-ExtraBoldItalic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-ExtraBoldItalic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-ExtraBoldItalic.ttf') format('truetype');
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-Light.eot');
-  src: url('/fonts/raleway/Raleway-v4020-Light.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-Light.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-LightItalic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-LightItalic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-LightItalic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-LightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-ExtraLight.eot');
-  src: url('/fonts/raleway/Raleway-v4020-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-ExtraLight.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-ExtraLight.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-Italic.eot');
-  src: url('/fonts/raleway/Raleway-v4020-Italic.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-Italic.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Raleway';
-  src: url('/fonts/raleway/Raleway-v4020-Thin.eot');
-  src: url('/fonts/raleway/Raleway-v4020-Thin.eot?#iefix') format('embedded-opentype'), url('/fonts/raleway/Raleway-v4020-Thin.woff') format('woff'), url('/fonts/raleway/Raleway-v4020-Thin.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/oswald/Oswald-ExtraLight.eot');
-  src: url('/fonts/oswald/Oswald-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/fonts/oswald/Oswald-ExtraLight.woff') format('woff'), url('/fonts/oswald/Oswald-ExtraLight.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/oswald/Oswald-Light.eot');
-  src: url('/fonts/oswald/Oswald-Light.eot?#iefix') format('embedded-opentype'), url('/fonts/oswald/Oswald-Light.woff') format('woff'), url('/fonts/oswald/Oswald-Light.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/oswald/Oswald-Regular.eot');
-  src: url('/fonts/oswald/Oswald-Regular.eot?#iefix') format('embedded-opentype'), url('/fonts/oswald/Oswald-Regular.woff') format('woff'), url('/fonts/oswald/Oswald-Regular.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/oswald/Oswald-Medium.eot');
-  src: url('/fonts/oswald/Oswald-Medium.eot?#iefix') format('embedded-opentype'), url('/fonts/oswald/Oswald-Medium.woff') format('woff'), url('/fonts/oswald/Oswald-Medium.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/oswald/Oswald-SemiBold.eot');
-  src: url('/fonts/oswald/Oswald-SemiBold.eot?#iefix') format('embedded-opentype'), url('/fonts/oswald/Oswald-SemiBold.woff') format('woff'), url('/fonts/oswald/Oswald-SemiBold.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/oswald/Oswald-Bold.eot');
-  src: url('/fonts/oswald/Oswald-Bold.eot?#iefix') format('embedded-opentype'), url('/fonts/oswald/Oswald-Bold.woff') format('woff'), url('/fonts/oswald/Oswald-Bold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
 }
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -2940,15 +2755,16 @@ body > footer > .inner .contact-part > .inner .instagram .caption-element {
   text-align: center;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.99), rgba(189, 104, 96, 0.75));
   transition: 0.1s ease-in-out;
+  overflow: hidden;
 }
 body > footer > .inner .contact-part > .inner .instagram .caption-element:after {
   content: "";
   z-index: -1;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
   background: url('/images/instagram-main-block.jpg') center / contain no-repeat;
   object-fit: cover;
 }
@@ -2996,6 +2812,10 @@ body > footer > .inner .contact-part > .inner .instagram .photos .photo {
   grid-column: span 3;
   filter: saturate(0.5);
   transition: filter 0.1s ease-in-out;
+}
+body > footer > .inner .contact-part > .inner .instagram .photos .photo:nth-of-type(1),
+body > footer > .inner .contact-part > .inner .instagram .photos .photo:nth-of-type(2) {
+  max-height: 200px;
 }
 body > footer > .inner .contact-part > .inner .instagram .photos .photo:hover {
   filter: saturate(1);
@@ -3660,7 +3480,7 @@ body > footer > .inner .bottom-part > .inner .copy-text a {
     padding: 25px 0 92px 0;
   }
 }
-body.page-home {
+body.page-homepage {
   position: relative;
 }
 /*
@@ -4535,6 +4355,20 @@ label.primary.type2 textarea {
   border-left: 2px solid #999999;
   background-image: linear-gradient(45deg, #1d1d1d 0, #141414 100%);
 }
+label.primary.type2 input:-webkit-autofill,
+label.primary.type2 textarea:-webkit-autofill,
+label.primary.type2 input:-webkit-autofill:hover,
+label.primary.type2 textarea:-webkit-autofill:hover,
+label.primary.type2 input:-webkit-autofill:focus,
+label.primary.type2 textarea:-webkit-autofill:focus,
+label.primary.type2 input:-internal-autofill-selected,
+label.primary.type2 textarea:-internal-autofill-selected {
+  border: none;
+  border-left: 2px solid #999999;
+  background: linear-gradient(45deg, #1d1d1d 0, #141414 100%) !important;
+  transition: background-color 50000s ease-in-out 0s, background-image 50000s ease-in-out 0s, border 50000s ease-in-out 0s;
+  -webkit-text-fill-color: #999999;
+}
 label.primary.type2 textarea {
   height: 150px;
   padding-top: 28px;
@@ -4635,11 +4469,11 @@ textarea {
  * Date: 02-06-2020
  *
  */
-body.page-home header {
+body.page-homepage header {
   position: relative;
   padding: 0;
 }
-body.page-home header > .inner {
+body.page-homepage header > .inner {
   z-index: 2;
   position: absolute;
   left: 50%;
@@ -4647,14 +4481,14 @@ body.page-home header > .inner {
   height: unset;
   transform: translateX(-50%);
 }
-body.page-home header section.homepage-banner {
+body.page-homepage header section.homepage-banner {
   position: relative;
   display: grid;
   justify-items: end;
   height: 100vh;
   width: 100%;
 }
-body.page-home header section.homepage-banner .info {
+body.page-homepage header section.homepage-banner .info {
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -4667,11 +4501,11 @@ body.page-home header section.homepage-banner .info {
   height: 100%;
   transform: translate(-50%, -50%);
 }
-body.page-home header section.homepage-banner .info .headline-block {
+body.page-homepage header section.homepage-banner .info .headline-block {
   margin-left: -5px;
   padding-bottom: 15px;
 }
-body.page-home header section.homepage-banner .info .headline-block .upper-headline {
+body.page-homepage header section.homepage-banner .info .headline-block .upper-headline {
   z-index: -1;
   position: relative;
   display: none;
@@ -4681,7 +4515,7 @@ body.page-home header section.homepage-banner .info .headline-block .upper-headl
   text-transform: uppercase;
   color: rgba(148, 139, 132, 0.38);
 }
-body.page-home header section.homepage-banner .info .headline-block h1.headline {
+body.page-homepage header section.homepage-banner .info .headline-block h1.headline {
   margin-top: -45px;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -4689,10 +4523,10 @@ body.page-home header section.homepage-banner .info .headline-block h1.headline 
   color: #C3946D;
   text-shadow: 0px -6px 20px rgba(0, 0, 0, 0.5);
 }
-body.page-home header section.homepage-banner .info .headline-block h1.headline span {
+body.page-homepage header section.homepage-banner .info .headline-block h1.headline span {
   color: #D7C2B0;
 }
-body.page-home header section.homepage-banner .info .headline-block .lower-headline {
+body.page-homepage header section.homepage-banner .info .headline-block .lower-headline {
   margin: -20px 0 0 4px;
   width: max-content;
   font-size: 32px;
@@ -4702,22 +4536,22 @@ body.page-home header section.homepage-banner .info .headline-block .lower-headl
   box-shadow: 0 -8px 20px 20px rgba(20, 20, 20, 0.67);
   opacity: 0.8;
 }
-body.page-home header section.homepage-banner .info .text {
+body.page-homepage header section.homepage-banner .info .text {
   max-width: 700px;
   font-size: 16px;
   font-weight: 300;
   color: #D7C2B0;
 }
-body.page-home header section.homepage-banner .info .btn-primary {
+body.page-homepage header section.homepage-banner .info .btn-primary {
   align-self: start;
 }
-body.page-home header section.homepage-banner .banner-images {
+body.page-homepage header section.homepage-banner .banner-images {
   position: relative;
   height: 100%;
   width: 60%;
   overflow: hidden;
 }
-body.page-home header section.homepage-banner .banner-images img.static-part {
+body.page-homepage header section.homepage-banner .banner-images img.static-part {
   position: absolute;
   top: 0;
   left: 0;
@@ -4725,7 +4559,7 @@ body.page-home header section.homepage-banner .banner-images img.static-part {
   height: 100%;
   object-fit: cover;
 }
-body.page-home header section.homepage-banner .banner-images img.moving-part {
+body.page-homepage header section.homepage-banner .banner-images img.moving-part {
   z-index: -1;
   position: absolute;
   top: 40%;
@@ -4735,33 +4569,33 @@ body.page-home header section.homepage-banner .banner-images img.moving-part {
   transform: translate(-50%, -50%);
   object-fit: contain;
 }
-body.page-home main {
+body.page-homepage main {
   margin-top: 0;
 }
 @media (max-width: 828px) {
-  body.page-home header section.homepage-banner .info .headline-block h1.headline {
+  body.page-homepage header section.homepage-banner .info .headline-block h1.headline {
     font-size: 60px;
   }
-  body.page-home header section.homepage-banner .info .headline-block .lower-headline {
+  body.page-homepage header section.homepage-banner .info .headline-block .lower-headline {
     margin: -10px 0 0 4px;
   }
-  body.page-home header section.homepage-banner .info .text {
+  body.page-homepage header section.homepage-banner .info .text {
     font-size: 14px;
   }
 }
 @media (max-width: 540px) {
-  body.page-home header section.homepage-banner .info {
+  body.page-homepage header section.homepage-banner .info {
     grid-template-rows: 2fr auto 2.5fr;
   }
-  body.page-home header section.homepage-banner .info .headline-block h1.headline {
+  body.page-homepage header section.homepage-banner .info .headline-block h1.headline {
     font-size: 34px;
   }
-  body.page-home header section.homepage-banner .info .headline-block .lower-headline {
+  body.page-homepage header section.homepage-banner .info .headline-block .lower-headline {
     margin: -4px 0 0 1px;
     font-size: 20px;
     box-shadow: 0 -3px 20px 5px rgba(20, 20, 20, 0.67);
   }
-  body.page-home header section.homepage-banner .info .text {
+  body.page-homepage header section.homepage-banner .info .text {
     font-size: 12px;
   }
 }
@@ -4858,12 +4692,12 @@ section.homepage section.about .content .info .text {
 section.homepage section.about .content .info .btn-primary {
   margin-top: 60px;
 }
-section.homepage section.bestoffer {
+section.homepage section.best-offer {
   position: relative;
   margin-top: 148px;
-  padding-bottom: 230px;
+  padding-bottom: 150px;
 }
-section.homepage section.bestoffer .bg-clippy {
+section.homepage section.best-offer .bg-clippy {
   z-index: -1;
   position: absolute;
   top: 400px;
@@ -4871,7 +4705,7 @@ section.homepage section.bestoffer .bg-clippy {
   width: 100%;
   height: 100%;
 }
-section.homepage section.bestoffer .bg-clippy:after {
+section.homepage section.best-offer .bg-clippy:after {
   content: "";
   z-index: -2;
   position: absolute;
@@ -4883,7 +4717,7 @@ section.homepage section.bestoffer .bg-clippy:after {
   clip-path: polygon(56% 52%, 67% 46%, 84% 43%, 100% 27%, 100% 100%, 0 100%, 4% 86%, 16% 75%, 28% 62%, 40% 58%);
   transition: 0.3s ease;
 }
-section.homepage section.bestoffer .bg-clippy:before {
+section.homepage section.best-offer .bg-clippy:before {
   content: "";
   z-index: -1;
   position: absolute;
@@ -4895,13 +4729,13 @@ section.homepage section.bestoffer .bg-clippy:before {
   clip-path: polygon(57% 59%, 67% 50%, 83% 49%, 100% 42%, 100% 100%, 0 100%, 0 86%, 17% 77%, 28% 66%, 41% 63%);
   transition: 1s ease;
 }
-section.homepage section.bestoffer .headline-block h2 {
+section.homepage section.best-offer .headline-block h2 {
   color: #fff;
 }
-section.homepage section.bestoffer .headline-block h2 span {
+section.homepage section.best-offer .headline-block h2 span {
   color: #D7C2B0;
 }
-section.homepage section.bestoffer > .inner .controls {
+section.homepage section.best-offer > .inner .controls {
   background-image: unset;
 }
 section.homepage section.advantages-and-news {
@@ -4961,14 +4795,14 @@ section.homepage section.advantages-and-news .inner .news .items .item .group .c
 section.homepage section.advantages-and-news .inner .news .items .item .group .text {
   z-index: 1;
   position: absolute;
-  bottom: -18%;
-  left: -15%;
+  bottom: -30%;
+  left: -30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: start;
   height: 100%;
-  width: 100%;
+  width: 150%;
 }
 section.homepage section.advantages-and-news .inner .news .items .item .group .text span {
   font-weight: 500;
@@ -4985,14 +4819,15 @@ section.homepage section.advantages-and-news .inner .news .items .item .group .i
 }
 section.homepage section.advantages-and-news .inner .news .items .item .group .image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 section.homepage section.advantages-and-news .inner .news .items .item .group .gradient-element {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 70%;
+  height: 100%;
 }
 section.homepage section.advantages-and-news .inner .news .btn-primary {
   float: right;
@@ -5101,7 +4936,7 @@ section.homepage section.quote {
 section.homepage section.quote blockquote {
   z-index: 1;
   position: relative;
-  top: 3%;
+  top: 7%;
   margin: 0;
   margin-right: 50px;
   padding-right: 15px;
@@ -5142,7 +4977,7 @@ section.homepage section.quote:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/i/bg-for-attachment.jpg');
+  background-image: url('/images/photo/bg-for-attachment.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -5155,7 +4990,7 @@ section.homepage section.quote .bg-clippy {
   bottom: -1px;
   left: 0;
   width: 100%;
-  height: 40%;
+  height: 50%;
   transform: rotateY(180deg);
 }
 section.homepage section.quote .bg-clippy:before {
@@ -5527,19 +5362,19 @@ section.homepage section.advantages .items .item .group2 .text {
     margin-bottom: 20px;
     font-size: 16px;
   }
-  section.homepage section.bestoffer {
+  section.homepage section.best-offer {
     margin-top: 60px;
     padding-bottom: 40px;
   }
-  section.homepage section.bestoffer .bg-clippy {
+  section.homepage section.best-offer .bg-clippy {
     top: unset;
     display: none;
     height: 70%;
   }
-  section.homepage section.bestoffer .bg-clippy:before {
+  section.homepage section.best-offer .bg-clippy:before {
     height: 40%;
   }
-  section.homepage section.bestoffer .bg-clippy:after {
+  section.homepage section.best-offer .bg-clippy:after {
     top: -57px;
     height: 50%;
   }

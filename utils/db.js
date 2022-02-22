@@ -1,5 +1,7 @@
 const mysql = require('mysql2');
 const keys = require('../keys');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 
 const pool = mysql.createPool({ // Подключение к базе данных
   connectionLimit: keys.DB_CONNLIMIT,
@@ -10,4 +12,11 @@ const pool = mysql.createPool({ // Подключение к базе данны
   waitForConnections: true,
 });
 
-module.exports = pool.promise();
+const db = pool.promise();
+
+const sessionStore = new MySQLStore({}, db); // Создаём хранилище в БД для данных сессий
+
+module.exports = {
+  db,
+  sessionStore
+}

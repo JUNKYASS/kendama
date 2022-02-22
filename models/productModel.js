@@ -1,4 +1,4 @@
-const db = require('../utils/db.js');
+const { db } = require('../utils/db.js');
 
 const tableName = 'product';
 
@@ -18,12 +18,15 @@ class Product {
         product_chr_url VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
         product_chr_name VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
         product_chr_article VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
-        product_img_image VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
+        product_img_image1 VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
+        product_img_image2 VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
         product_txt_text TEXT CHARACTER SET 'utf8' COLLATE 'utf8_general_ci',
         product_dec_price1 DECIMAL NOT NULL,
         product_dec_price2 DECIMAL NULL,
         product_chk_print BIT(32) NULL,
         product_chk_show BIT(32) NULL,
+        product_chk_hot ENUM('YES', 'NO') NOT NULL DEFAULT 'NO',
+        product_chk_new ENUM('YES', 'NO') NOT NULL DEFAULT 'NO',
         product_enm_available ENUM('YES', 'NO') NOT NULL DEFAULT 'YES',
         product_enm_active ENUM('YES', 'NO') NOT NULL DEFAULT 'YES',
         product_smp_create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -66,12 +69,15 @@ class Product {
           product_chr_url,
           product_chr_name,
           product_chr_article,
-          product_img_image,
+          product_img_image1,
+          product_img_image2,
           product_txt_text,
           product_dec_price1,
           product_dec_price2,
           product_chk_print,
           product_chk_show,
+          product_enm_hot,
+          product_enm_new,
           product_enm_available,
           product_enm_active,
           product_smp_create,
@@ -90,6 +96,109 @@ class Product {
       return err;
     }
   }
+
+  static async selectBestOffer() {
+    try {
+      return await db.execute(
+        `
+        SELECT
+          product_uid_id,
+          product_mbr_member,
+          product_hld_holder,
+          product_chr_url,
+          product_chr_name,
+          product_chr_article,
+          product_img_image1,
+          product_img_image2,
+          product_txt_text,
+
+          product_dec_price1,
+          product_dec_price2,
+
+          IF(IFNULL(ROUND(product_dec_price2), 0) <> 0, 'discount', '') AS discount_class,
+          ROUND(IF(IFNULL(product_dec_price2, 0) <> 0, product_dec_price2, product_dec_price1)) AS product_dec_price,
+          ROUND(product_dec_price1) AS product_dec_oldprice,
+          FLOOR(((product_dec_price1 - product_dec_price2) / product_dec_price1) * 100) AS discount_amount,
+
+          product_chk_print,
+          product_chk_show,
+          product_enm_hot,
+          product_enm_new,
+
+          IF(IFNULL(product_enm_new, 'NO') = 'YES', 'new', '') new_class,
+          IF(IFNULL(product_enm_hot, 'NO') = 'YES', 'hot', '') hot_class,
+
+          product_enm_available,
+          product_enm_active,
+          product_smp_create,
+          product_smp_update
+        FROM ${tableName}
+        WHERE product_hld_holder = 2 
+          AND product_mbr_member = 1 
+          AND IFNULL(product_enm_hot, 'NO') = 'YES' 
+          AND IFNULL(product_enm_active, 'YES') = 'YES'
+        ORDER BY product_uid_id
+        `
+      );
+    } catch(e) {
+      const err = e.sqlMessage ? e.sqlMessage : e;
+      console.log(err);
+
+      return err;
+    }
+  }
+
+  // TODO: сделать подсчет наиболее популярных по (выбрать):  количеству добавлений в корзину / по количеству просмотров / по количеству покупок
+  static async selectMostFamous() {
+    try {
+      return await db.execute(
+        `
+        SELECT
+          product_uid_id,
+          product_mbr_member,
+          product_hld_holder,
+          product_chr_url,
+          product_chr_name,
+          product_chr_article,
+          product_img_image1,
+          product_img_image2,
+          product_txt_text,
+
+          product_dec_price1,
+          product_dec_price2,
+
+          IF(IFNULL(ROUND(product_dec_price2), 0) <> 0, 'discount', '') AS discount_class,
+          ROUND(IF(IFNULL(product_dec_price2, 0) <> 0, product_dec_price2, product_dec_price1)) AS product_dec_price,
+          ROUND(product_dec_price1) AS product_dec_oldprice,
+          FLOOR(((product_dec_price1 - product_dec_price2) / product_dec_price1) * 100) AS discount_amount,
+
+          product_chk_print,
+          product_chk_show,
+          product_enm_hot,
+          product_enm_new,
+
+          IF(IFNULL(product_enm_new, 'NO') = 'YES', 'new', '') new_class,
+          IF(IFNULL(product_enm_hot, 'NO') = 'YES', 'hot', '') hot_class,
+
+          product_enm_available,
+          product_enm_active,
+          product_smp_create,
+          product_smp_update
+        FROM ${tableName}
+        WHERE product_hld_holder = 2 
+          AND product_mbr_member = 1 
+          AND IFNULL(product_enm_hot, 'NO') = 'YES' 
+          AND IFNULL(product_enm_active, 'YES') = 'YES'
+        ORDER BY product_uid_id DESC
+        `
+      );
+    } catch(e) {
+      const err = e.sqlMessage ? e.sqlMessage : e;
+      console.log(err);
+
+      return err;
+    }
+  }  
 
   static async selectById(id) {
     try {
@@ -113,15 +222,18 @@ class Product {
           product_chr_url,
           product_chr_name,
           product_chr_article,
-          product_img_image,
+          product_img_image1,
+          product_img_image2,
           product_txt_text,
           product_dec_price1,
           product_dec_price2,
           product_chk_print,
           product_chk_show,
           product_enm_available,
-          product_enm_active
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          product_enm_active,
+          product_enm_hot,
+          product_enm_new
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `,
         [
           body.product_mbr_member ? body.product_mbr_member : 0,
@@ -129,7 +241,8 @@ class Product {
           body.product_chr_url ? body.product_chr_url : null,
           body.product_chr_name ? body.product_chr_name : null,
           body.product_chr_article ? body.product_chr_article : null,
-          body.product_img_image ? body.product_img_image : null,
+          body.product_img_image1 ? body.product_img_image : null,
+          body.product_img_image2 ? body.product_img_image : null,
           body.product_txt_text ? body.product_txt_text : null,
           body.product_dec_price1 ? body.product_dec_price1 : null,
           body.product_dec_price2 ? body.product_dec_price2 : null,
@@ -137,6 +250,8 @@ class Product {
           body.product_chk_show ? body.product_chk_show : null,
           body.product_enm_available ? body.product_enm_available : 'YES',
           body.product_enm_active ? body.product_enm_active : 'YES',
+          body.product_enm_hot ? body.product_enm_hot : 'NO',
+          body.product_enm_new ? body.product_enm_new : 'NO',
         ]
       );
     } catch(e) {
@@ -179,7 +294,8 @@ class Product {
           product_chr_url = ?,
           product_chr_name = ?,
           product_chr_article = ?,
-          product_img_image = ?,
+          product_img_image1 = ?,
+          product_img_image2 = ?,
           product_txt_text = ?,
           product_dec_price1 = ?,
           product_dec_price2 = ?,
@@ -187,6 +303,8 @@ class Product {
           product_chk_show = ?,
           product_enm_available = ?,
           product_enm_active = ?
+          product_enm_hot = ?
+          product_enm_new = ?
         WHERE product_uid_id = ?
         `,
         [
@@ -195,7 +313,8 @@ class Product {
           newRow.product_chr_url ? newRow.product_chr_url : null,
           newRow.product_chr_name ? newRow.product_chr_name : null,
           newRow.product_chr_article ? newRow.product_chr_article : null,
-          newRow.product_img_image ? newRow.product_img_image : null,
+          newRow.product_img_image1 ? newRow.product_img_image1 : null,
+          newRow.product_img_image2 ? newRow.product_img_image2 : null,
           newRow.product_txt_text ? newRow.product_txt_text : null,
           newRow.product_dec_price1 ? newRow.product_dec_price1 : null,
           newRow.product_dec_price2 ? newRow.product_dec_price2 : null,
@@ -203,6 +322,8 @@ class Product {
           newRow.product_chk_show ? newRow.product_chk_show : null,
           newRow.product_enm_available ? newRow.product_enm_available : null,
           newRow.product_enm_active ? newRow.product_enm_active : null,
+          newRow.product_enm_hot ? newRow.product_enm_hot : null,
+          newRow.product_enm_new ? newRow.product_enm_new : null,
           newRow.product_uid_id
         ]
       );
