@@ -2755,15 +2755,16 @@ body > footer > .inner .contact-part > .inner .instagram .caption-element {
   text-align: center;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.99), rgba(189, 104, 96, 0.75));
   transition: 0.1s ease-in-out;
+  overflow: hidden;
 }
 body > footer > .inner .contact-part > .inner .instagram .caption-element:after {
   content: "";
   z-index: -1;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
   background: url('/images/instagram-main-block.jpg') center / contain no-repeat;
   object-fit: cover;
 }
@@ -2811,6 +2812,10 @@ body > footer > .inner .contact-part > .inner .instagram .photos .photo {
   grid-column: span 3;
   filter: saturate(0.5);
   transition: filter 0.1s ease-in-out;
+}
+body > footer > .inner .contact-part > .inner .instagram .photos .photo:nth-of-type(1),
+body > footer > .inner .contact-part > .inner .instagram .photos .photo:nth-of-type(2) {
+  max-height: 200px;
 }
 body > footer > .inner .contact-part > .inner .instagram .photos .photo:hover {
   filter: saturate(1);

@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     return item;
   });
 
-  productsMostFamous.map((item, i) => { // Добавляем для каждой записи поле rowNumber которая хранит инддекс
+  productsMostFamous.map((item, i) => {
     item.rowNumber = ++i;
     return item;
   });
@@ -27,6 +27,12 @@ router.get('/', async (req, res) => {
     item.rowNumber = ++i;
     return item;
   });
+
+  advantagesHorizontal.map((item, i) => {
+    item.rowNumber = ++i;
+    return item;
+  });
+
 
   res.render('homepage', {
     productsBestOffer,
