@@ -14,8 +14,9 @@ const { validationResult } = require('express-validator');
 const { regValidators, loginValidators } = require('../utils/validators');
 
 // const transporter = nodemailer.createTransport(sendgrid({
-//   auth: { api_key: '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' }
+//   auth: { api_key: keys.SENDGRID_API_KEY }
 // }));
+
 const transporter = nodemailer.createTransport({
   service: 'Yandex',
   auth: {
@@ -59,12 +60,12 @@ router.post('/login', loginValidators, async (req, res) => {
   const [candidate] = await User.selectByEmail(user_chr_email); // Ищем пользователя с email, указанным при авторизации
   const compareResult = await bcrypt.compare(user_chr_pass, candidate[0].user_chr_pass); // Проверяем правильно ли указан пароль
 
-  if(candidate[0] && compareResult) {
-    if(compareResult) { // Если пароли совпадают
+  if (candidate[0] && compareResult) {
+    if (compareResult) { // Если пароли совпадают
       req.session.isLogged = true;
       req.session.user = candidate[0];
       req.session.save(async (err) => {
-        if(err) {
+        if (err) {
           throw err;
         } else {
           res.json({ success: true, message: 'Авторизация прошла успешно! <br><a href="/profile" class="return-link">Перейти в профиль</a>' });
